@@ -1,1 +1,10 @@
-
+workflows:
+  workflow-name:
+    environment:
+      groups:
+        - appstore_credentials
+        - ios_config
+    scripts:
+      - name: Generate keystore file
+        script: | 
+          echo $YOUR_ENVIRONMENT_VARIABLE | base64 --decode > /path/to/decode/to/codemagic.keystore
